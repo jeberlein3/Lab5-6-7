@@ -1,13 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-class Car {
+class Profile {
     constructor(norm) {
         this.model = [{
-                id: { type: Number, key: 'primary' },
-                make: { type: String, maxlength: 24 },
-                model: { type: String, maxlength: 24 },
-                year: { type: String, maxlength: 24 },
-                mileage: { type: String, maxlength: 24 },
+                profile_id: { type: Number, key: 'primary' },
+                image: { type: File },
+                city: { type: String, maxlength: 24 },
+                state: { type: String, maxlength: 24 },
+                interests: { type: String, maxlength: 100 },
+                about: { type: String, maxlength: 150 },
                 user_id: {
                     type: Number,
                     key: 'foreign',
@@ -15,7 +16,7 @@ class Car {
                     onDelete: 'cascade',
                     onUpdate: 'cascade'
                 },
-            }, 'A table to store car info', []];
+            }, 'A table to store exam model', []];
     }
     set model(model) {
         this._model = model;
@@ -24,4 +25,4 @@ class Car {
         return this._model;
     }
 }
-exports.Car = Car;
+exports.Profile = Profile;
