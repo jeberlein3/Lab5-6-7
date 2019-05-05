@@ -34,19 +34,36 @@ export class Car {
         method: 'POST',
         callback: this.createCarFunc,
         requireToken: true,
+      },
+      {
+        route: '/updateCar/id/:car_id',
+        method: 'PUT',
+        callback: this.updateCarFunc,
+        requireToken: true,
       }
 
   
   
   
   ]];}
+  updateCarFunc(model: any) {
+    return async(req: Request, res: Response, next: NextFunction) => {
+        console.log('req-body',req.body); 
+        let carModel = model.controller;
+        //console.log('model.model.controller', model.model.controller);
+        //console.log('model get',certsModel.get)
+        let resp = carModel.update(req, null, null);
+        console.log('resp from update', PaymentRequestUpdateEvent);
+        res.json({ message: 'getCertifications works...', resp });
+    }
+}
   createCarFunc(model: any) {
     return async(req: Request, res: Response, next: NextFunction) => {
         console.log('req-body',req.body); 
         let carModel = model.controller;
         //console.log('model.model.controller', model.model.controller);
         //console.log('model get',certsModel.get)
-        let resp = carModel.create(req, null, null);
+        let resp = carModel.insert(req, null, null);
         console.log('from test model resp:', resp);
         res.json({ message: 'getCertifications works...', resp });
     }

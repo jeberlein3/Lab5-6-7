@@ -34,12 +34,31 @@ export class Certification {
       method: 'POST',
       callback: this.createCertFunc,
       requireToken: true,
+    },
+    {
+      route: '/updateCert/id/:cert_id',
+      method: 'PUT',
+      callback: this.updateCertFunc,
+      requireToken: true,
     }
 
 
 
 
 ]];}
+updateCertFunc(model: any) {
+  return async(req: Request, res: Response, next: NextFunction) => {
+      console.log('req-body',req.body); 
+      let certModel = model.controller;
+      //console.log('model.model.controller', model.model.controller);
+      //console.log('model get',certsModel.get)
+      let resp = certModel.update(req, null, null);
+      console.log('resp from update', PaymentRequestUpdateEvent);
+      res.json({ message: 'update Certifications works...', resp });
+  }
+}
+
+
 createCertFunc(model: any) {
   return async(req: Request, res: Response, next: NextFunction) => {
       console.log('req-body',req.body); 
