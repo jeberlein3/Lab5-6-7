@@ -30,13 +30,29 @@ export class Profile {
         method: 'POST',
         callback: this.getProfileFuncbyID,
         requireToken: true,
+      },
+      {
+        route: '/createProfile',
+        method: 'POST',
+        callback: this.createProfileFunc,
+        requireToken: true,
       }
+
   
-    
-    
-    
-    ]];}
-        
+  
+  
+  ]];}
+  createProfileFunc(model: any) {
+    return async(req: Request, res: Response, next: NextFunction) => {
+        console.log('req-body',req.body); 
+        let profileModel = model.controller;
+        //console.log('model.model.controller', model.model.controller);
+        //console.log('model get',certsModel.get)
+        let resp = carModel.insert(req, null, null);
+        console.log('from profile model resp:', resp);
+        res.json({ message: 'createProfile works...', resp });
+    }
+}
       getProfileFunc(model: any) {
         return async(req: Request, res: Response, next: NextFunction) => {
             req.body= {
