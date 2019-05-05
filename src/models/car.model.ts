@@ -16,7 +16,7 @@ export class Car {
           onDelete: 'cascade',
           onUpdate: 'cascade'
         },
-      }, 'A table to store certifications model', [
+      }, 'A table to store cars model', [
         {
         route: '/getCar',
         method: 'POST',
@@ -40,19 +40,36 @@ export class Car {
         method: 'PUT',
         callback: this.updateCarFunc,
         requireToken: true,
+      },
+      {
+        route: '/deleteCar/id/:car_id',
+        method: 'DELETE',
+        callback: this.deleteCarFunc,
+        requireToken: true,
       }
 
   
   
   
   ]];}
+  deleteCarFunc(model: any) {
+    return async(req: Request, res: Response, next: NextFunction) => {
+        console.log('req-body',req.body); 
+        let carModel = model.controller;
+        //console.log('model.model.controller', model.model.controller);
+        //console.log('model get',certsModel.get)
+        let resp = await carModel.remove(req, null, null);
+        console.log('resp from deletion', resp);
+        res.json({ message: 'delete car works...', resp });
+    }
+}
   updateCarFunc(model: any) {
     return async(req: Request, res: Response, next: NextFunction) => {
         console.log('req-body',req.body); 
         let carModel = model.controller;
         //console.log('model.model.controller', model.model.controller);
         //console.log('model get',certsModel.get)
-        let resp = carModel.update(req, null, null);
+        let resp = await carModel.update(req, null, null);
         console.log('resp from update', PaymentRequestUpdateEvent);
         res.json({ message: 'getCertifications works...', resp });
     }

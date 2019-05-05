@@ -40,12 +40,31 @@ export class Certification {
       method: 'PUT',
       callback: this.updateCertFunc,
       requireToken: true,
+    },
+    {
+      route: '/deleteCert/id/:cert_id',
+      method: 'DELETE',
+      callback: this.deleteCertFunc,
+      requireToken: true,
     }
 
 
 
 
 ]];}
+deleteCertFunc(model: any) {
+  return async(req: Request, res: Response, next: NextFunction) => {
+      console.log('req-body',req.body); 
+      let certModel = model.controller;
+      //console.log('model.model.controller', model.model.controller);
+      //console.log('model get',certsModel.get)
+      let resp = await certModel.remove(req, null, null);
+      console.log('resp from deletion', resp);
+      res.json({ message: 'delete cert works...', resp });
+  }
+}
+
+
 updateCertFunc(model: any) {
   return async(req: Request, res: Response, next: NextFunction) => {
       console.log('req-body',req.body); 
