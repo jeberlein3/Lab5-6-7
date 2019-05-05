@@ -1,0 +1,249 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Riched20 10.0.17134}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9\par
+\b Car Model\b0\par
+Description: Get all cars from the database\par
+Endpoint: {{\field{\*\fldinst{HYPERLINK http://localhost:3002/api/v1/car/getCar }}{\fldrslt{http://localhost:3002/api/v1/car/getCar\ul0\cf0}}}}\f0\fs22\par
+Method: GET\par
+Params: none\par
+Request Payload: none\par
+Response: \par
+\{\par
+   car_id: \{ type: Number, key: 'primary' \},\par
+    car_make: \{ type: String, maxlength: 24 \},\par
+    car_model: \{type: String, maxLength: 24\},\par
+    car_mileage: \{type:Number\},\par
+     car_year: \{type: Number\}\par
+\}\par
+Description: Get car from the database by id\par
+Endpoint: {{\field{\*\fldinst{HYPERLINK http://localhost:3002/api/v1/car/getCarByID }}{\fldrslt{http://localhost:3002/api/v1/car/getCarByID\ul0\cf0}}}}\f0\fs22\par
+Method: GET\par
+Params: car_id\par
+Request Payload:\par
+\{\par
+   car_id: \{ type: Number, key: 'primary' \},\par
+    car_make: \{ type: String, maxlength: 24 \},\par
+    car_model: \{type: String, maxLength: 24\},\par
+    car_mileage: \{type:Number\},\par
+     car_year: \{type: Number\}\par
+\}\par
+_________________________________\par
+\par
+Description: Update car from the database\par
+Endpoint: {{\field{\*\fldinst{HYPERLINK http://localhost:3002/api/v1/car/updateCar }}{\fldrslt{http://localhost:3002/api/v1/car/updateCar\ul0\cf0}}}}\f0\fs22\par
+Method: PUT\par
+Params: car_id\par
+Request Payload:\par
+\{\par
+    car_make: \{ type: String, maxlength: 24 \},\par
+    car_model: \{type: String, maxLength: 24\},\par
+    car_mileage: \{type:Number\},\par
+     car_year: \{type: Number\}\par
+\}\par
+Response: \{\par
+   car_id: \{ type: Number, key: 'primary' \},\par
+    car_make: \{ type: String, maxlength: 24 \},\par
+    car_model: \{type: String, maxLength: 24\},\par
+    car_mileage: \{type:Number\},\par
+     car_year: \{type: Number\}\par
+\}\par
+Description: Delete car from the database\par
+Endpoint: {{\field{\*\fldinst{HYPERLINK http://localhost:3002/api/v1/car/getCar }}{\fldrslt{http://localhost:3002/api/v1/car/getCar\ul0\cf0}}}}\f0\fs22\par
+Method: DELETE\par
+Params: car_id\par
+Request Payload: none\par
+Response: \par
+\{\par
+   car_id: \{ type: Number, key: 'primary' \},\par
+    car_make: \{ type: String, maxlength: 24 \},\par
+    car_model: \{type: String, maxLength: 24\},\par
+    car_mileage: \{type:Number\},\par
+     car_year: \{type: Number\}\par
+\}\par
+Description: Create a new car\par
+Endpoint: {{\field{\*\fldinst{HYPERLINK http://localhost:3002/api/v1/car/createCar }}{\fldrslt{http://localhost:3002/api/v1/car/createCar\ul0\cf0}}}}\f0\fs22\par
+Method: POST\par
+Params: none\par
+Request Payload: \{\par
+    car_make: \{ type: String, maxlength: 24 \},\par
+    car_model: \{type: String, maxLength: 24\},\par
+    car_mileage: \{type:Number\},\par
+     car_year: \{type: Number\}\par
+\}\par
+Response: \par
+\{\par
+   car_id: \{ type: Number, key: 'primary' \},\par
+    car_make: \{ type: String, maxlength: 24 \},\par
+    car_model: \{type: String, maxLength: 24\},\par
+    car_mileage: \{type:Number\},\par
+     car_year: \{type: Number\}\par
+\}\par
+\par
+\b Certification Model\b0\par
+Description: Get all certifications from the database\par
+Endpoint: {{\field{\*\fldinst{HYPERLINK http://localhost:3002/api/v1/certification/getCert }}{\fldrslt{http://localhost:3002/api/v1/certification/getCert\ul0\cf0}}}}\f0\fs22\par
+Method: GET\par
+Params: none\par
+Request Payload: none\par
+Response: \par
+\{\par
+        cert_id: \{ type: Number, key: 'primary' \},\par
+        cert_name: \{ type: String, maxlength: 24 \},\par
+        cert_cost: \{type: String, maxLength: 12\},\par
+        cert_validity: \{type:Number\},\par
+        cert_description: \{type: String, maxLength: 140\par
+\}\par
+Description: Get certification from the database by id\par
+Endpoint: {{\field{\*\fldinst{HYPERLINK http://localhost:3002/api/v1/certification/getCertByID }}{\fldrslt{http://localhost:3002/api/v1/certification/getCertByID\ul0\cf0}}}}\f0\fs22\par
+Method: GET\par
+Params: cert_id\par
+Request Payload:\par
+\{\par
+        cert_id: \{ type: Number, key: 'primary' \},\par
+        cert_name: \{ type: String, maxlength: 24 \},\par
+        cert_cost: \{type: String, maxLength: 12\},\par
+        cert_validity: \{type:Number\},\par
+        cert_description: \{type: String, maxLength: 140\par
+\}\par
+_________________________________\par
+\par
+Description: Update certification from the database\par
+Endpoint: {{\field{\*\fldinst{HYPERLINK http://localhost:3002/api/v1/certification/updateCert }}{\fldrslt{http://localhost:3002/api/v1/certification/updateCert\ul0\cf0}}}}\f0\fs22\par
+Method: PUT\par
+Params: cert_id\par
+Request Payload:\par
+\{\par
+        cert_name: \{ type: String, maxlength: 24 \},\par
+        cert_cost: \{type: String, maxLength: 12\},\par
+        cert_validity: \{type:Number\},\par
+        cert_description: \{type: String, maxLength: 140\par
+\}\par
+Response: \{\par
+        cert_id: \{ type: Number, key: 'primary' \},\par
+        cert_name: \{ type: String, maxlength: 24 \},\par
+        cert_cost: \{type: String, maxLength: 12\},\par
+        cert_validity: \{type:Number\},\par
+        cert_description: \{type: String, maxLength: 140\par
+\}\par
+Description: Delete certification from the database\par
+Endpoint: {{\field{\*\fldinst{HYPERLINK http://localhost:3002/api/v1/certification/deleteCert }}{\fldrslt{http://localhost:3002/api/v1/certification/deleteCert\ul0\cf0}}}}\f0\fs22\par
+Method: DELETE\par
+Params: cert_id\par
+Request Payload: none\par
+Response: \par
+\{\par
+        cert_id: \{ type: Number, key: 'primary' \},\par
+        cert_name: \{ type: String, maxlength: 24 \},\par
+        cert_cost: \{type: String, maxLength: 12\},\par
+        cert_validity: \{type:Number\},\par
+        cert_description: \{type: String, maxLength: 140\par
+\}\par
+Description: Create a new cert\par
+Endpoint: {{\field{\*\fldinst{HYPERLINK http://localhost:3002/api/v1/certification/createCert }}{\fldrslt{http://localhost:3002/api/v1/certification/createCert\ul0\cf0}}}}\f0\fs22\par
+Method: POST\par
+Params: none\par
+Request Payload: \{\par
+        cert_name: \{ type: String, maxlength: 24 \},\par
+        cert_cost: \{type: String, maxLength: 12\},\par
+        cert_validity: \{type:Number\},\par
+        cert_description: \{type: String, maxLength: 140\}\}\par
+Response: \par
+\{\par
+   car_id: \{ type: Number, key: 'primary' \},\par
+    car_make: \{ type: String, maxlength: 24 \},\par
+    car_model: \{type: String, maxLength: 24\},\par
+    car_mileage: \{type:Number\},\par
+     car_year: \{type: Number\}\par
+\}\par
+\b Profile Model\b0\par
+Description: Get all profiles from the database\par
+Endpoint: {{\field{\*\fldinst{HYPERLINK http://localhost:3002/api/v1/profile/getProfile }}{\fldrslt{http://localhost:3002/api/v1/profile/getProfile\ul0\cf0}}}}\f0\fs22\par
+Method: GET\par
+Params: none\par
+Request Payload: none\par
+Response: \par
+\{\par
+        profile_id: \{ type: Number, key: 'primary' \},\par
+        image: \{ type: File\},\par
+        city: \{ type: String, maxlength: 24 \},\par
+        state: \{ type: String, maxlength: 24 \},\par
+        interests: \{ type: String, maxlength: 100 \},\par
+        about: \{ type: String, maxlength: 150 \}\par
+\}\par
+Description: Get profile from the database by id\par
+Endpoint: {{\field{\*\fldinst{HYPERLINK http://localhost:3002/api/v1/profile/getProfileByID }}{\fldrslt{http://localhost:3002/api/v1/profile/getProfileByID\ul0\cf0}}}}\f0\fs22\par
+Method: GET\par
+Params: profile_id\par
+Request Payload:\par
+\{       profile_id: \{ type: Number, key: 'primary\}' ,\par
+        image: \{ type: File\},\par
+        city: \{ type: String, maxlength: 24 \},\par
+        state: \{ type: String, maxlength: 24 \},\par
+        interests: \{ type: String, maxlength: 100 \},\par
+        about: \{ type: String, maxlength: 150 \}\par
+\par
+\}\par
+_________________________________\par
+\par
+Description: Update profile from the database\par
+Endpoint: {{\field{\*\fldinst{HYPERLINK http://localhost:3002/api/v1/profile/updateProfile }}{\fldrslt{http://localhost:3002/api/v1/profile/updateProfile\ul0\cf0}}}}\f0\fs22\par
+Method: PUT\par
+Params: profile_id\par
+Request Payload:\par
+\{\par
+        image: \{ type: File\},\par
+        city: \{ type: String, maxlength: 24 \},\par
+        state: \{ type: String, maxlength: 24 \},\par
+        interests: \{ type: String, maxlength: 100 \},\par
+        about: \{ type: String, maxlength: 150 \}\par
+\par
+\}\par
+Response: \par
+\{\par
+        profile_id: \{ type: Number, key: 'primary' \},\par
+        image: \{ type: File\},\par
+        city: \{ type: String, maxlength: 24 \},\par
+        state: \{ type: String, maxlength: 24 \},\par
+        interests: \{ type: String, maxlength: 100 \},\par
+        about: \{ type: String, maxlength: 150 \}\par
+\}\par
+Description: Delete profile from the database\par
+Endpoint: {{\field{\*\fldinst{HYPERLINK http://localhost:3002/api/v1/profile/delteProfile }}{\fldrslt{http://localhost:3002/api/v1/profile/delteProfile\ul0\cf0}}}}\f0\fs22\par
+Method: DELETE\par
+Params: profile_id\par
+Request Payload: none\par
+Response: \{\par
+        profile_id: \{ type: Number, key: 'primary' \},\par
+        image: \{ type: File\},\par
+        city: \{ type: String, maxlength: 24 \},\par
+        state: \{ type: String, maxlength: 24 \},\par
+        interests: \{ type: String, maxlength: 100 \},\par
+        about: \{ type: String, maxlength: 150 \}\par
+\}\par
+Description: Create a new profile\par
+Endpoint: {{\field{\*\fldinst{HYPERLINK http://localhost:3002/api/v1/profile/createProfile }}{\fldrslt{http://localhost:3002/api/v1/profile/createProfile\ul0\cf0}}}}\f0\fs22\par
+Method: POST\par
+Params: none\par
+Request Payload: \{\par
+        image: \{ type: File\},\par
+        city: \{ type: String, maxlength: 24 \},\par
+        state: \{ type: String, maxlength: 24 \},\par
+        interests: \{ type: String, maxlength: 100 \},\par
+        about: \{ type: String, maxlength: 150 \}\par
+\}\par
+Response: \par
+\{\par
+        profile_id: \{ type: Number, key: 'primary' \},\par
+        image: \{ type: File\},\par
+        city: \{ type: String, maxlength: 24 \},\par
+        state: \{ type: String, maxlength: 24 \},\par
+        interests: \{ type: String, maxlength: 100 \},\par
+        about: \{ type: String, maxlength: 150 \}\par
+\}\par
+\par
+\par
+\par
+\par
+}
+ 
